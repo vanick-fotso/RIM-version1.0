@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+    <title>Mot a deviner - Allemand - Niveau A1</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f6f8fa;
+            color: #222;
+            padding: 1em;
+            text-align: center;
+        }
+
+        h1{
+           color: #0a74da;
+        }
+
+        .vocab-card{
+           background: white;
+           padding: 1em;
+           border-radius: 12px;
+           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+           margin: 1em auto;
+           max-width: 400px;
+        }
+
+        button{
+           margin-top: 2em;
+           padding: 0.8em 1.2em;
+           font-size: 1em;
+           background-color: #0a74da;
+           color: white;
+           border: none;
+           border-radius: 8px;
+           cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1> 📖 RIM (version 1.0) : MOT ALLEMAND A DEVINER - NIVEAU A1 </h1>
+    <div id="vocab-container"></div>
+    <button onclick="showRandomWords()"> Voir 3 autres mots</button>
+    <script>
+        const vocabA1 = [
+            {wort: "der Apfel", bedeutung: "la pomme", beispiel: "Ich esse einen Apfel."},
+            {wort: "das Haus", bedeutung: "la maison", beispiel: "Das Haus ist groß."},
+            {wort: "die Katze", bedeutung: "le chat", beispiel: "Die Katze schläft."},
+            {wort: "trinken", bedeutung: "boire", beispiel: "Ich trinke Wasser."},
+            {wort: "gehen", bedeutung: "aller", beispiel: "Wir gehen zur Schule."},
+            {wort: "der Tisch", bedeutung: "la table", beispiel: "Der Tisch ist aus Holz."},
+            {wort: "die Tür", bedeutung: "la porte", beispiel: "Die Tür ist offen."},
+            {wort: "hören", bedeutung: "écouter", beispiel: "Ich höre Musik."},
+            {wort: "das Freund", bedeutung: "l'ami", beispiel: "Mein Freund heißt Tim."},
+            {wort: "lernen", bedeutung: "apprendre", beispiel: "Ich lerne Deutsch."},
+            {wort: "schreiben", bedeutung: "écrire", beispiel: "Er schreibt einen Brief."},
+            {wort: "lesen", bedeutung: "lire", beispiel: "Sie liest ein Buch."},
+            {wort: "sprechen", bedeutung: "parler", beispiel: "Ich spreche ein bisschen Deutsch."},
+            {wort: "Wohnen", bedeutung: "habiter", beispiel: "Wir wohnen in Berlin."},
+            {wort: "arbeiten", bedeutung: "travailler", beispiel: "Er arbeitet im Büro."},
+            {wort: "essen", bedeutung: "manger", beispiel: "Wir essen Pizza."},
+            {wort: "das Auto", bedeutung: "la voiture", beispiel: "Das Auto ist neu."},
+            {wort: "das Buch", bedeutung: "le livre", beispiel: "Das Buch ist interessant."},
+            {wort: "machen", bedeutung: "faire", beispiel: "Ich mache meine Hausaufgaben."},
+            {wort: "sein", bedeutung: "être", beispiel: "Ich bin müde."},
+        ];
+        function showRandomWords(){
+            const container = document.getElementById("vocab-container");
+            container.innerHTML= "";
+            const shuffled = vocabA1.sort(()=> 0.5 - Math.random());
+            const selected = shuffled.slice(0, 3);
+
+            selected.forEach(entry =>{
+                const card = document.createElement("div");
+                card.className = "vocab-card";
+                card.innerHTML = `
+                  <h2>${entry.wort}</h2>
+                  <p><strong>Français: </strong> ${entry.bedeutung}</p>
+                  <p><em>${entry.beispiel}</em></p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        //Afficher 3 mots au chaegement
+        showRandomWords();
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f6f8fa;
+    color: #222;
+}
+
+header{
+    background-color: #0a74da;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav{
+    margin-top: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1em;
+    padding: 0.2em 0.5em;
+    border-radius: 6px;
+}
+
+nav a.active,
+nav a:hover{
+    background-color: white;
+    color: #0a74da;
+}
+
+main{
+    padding: 2em;
+}
+
+#vocab-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5em;
+}
+
+.vocab-card{
+    background: white;
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vocab-card h2{
+    color: #0a74da;
+    margin: 0 0 0.5em;
+}
+
+footer{
+    text-align: center;
+    padding: 1em;
+    font-size: 0.9em;
+    background-color: #eee;
+    margin-top: 3em;
+}
+
+#search {
+    text-align: center;
+    margin-bottom: 2em;
+}
+#search input{
+    width: 80%;
+    max-width: 400px;
+    padding: 0.6em;
+    font-size: 1em;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+#search button{
+    padding: 0.6em 1em;
+    margin-left: 0.5em;
+    font-size: 1em;
+    background-color: #0a74da;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
